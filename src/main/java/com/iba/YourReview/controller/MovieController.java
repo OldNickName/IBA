@@ -4,9 +4,8 @@ import com.iba.YourReview.entity.Movie;
 import com.iba.YourReview.repository.MovieRepo;
 import com.iba.YourReview.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,8 +33,4 @@ public class MovieController {
         return movieService.findByTitle(title);
     }
 
-    @GetMapping("/greeting/{name}")
-    public String greeting(@PathVariable String name){
-        return "Hello, " + name;
-    }
 }
