@@ -14,7 +14,7 @@ public class RegistrationController {
     @Autowired
     private AppUserRepo appUserRepo;
 
-    @RequestMapping(value = "user/registration", method = RequestMethod.POST)
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
     public AppUser registerUserAccount(@RequestBody AppUser appUser){
         return appUserRepo.save(appUser);
     }

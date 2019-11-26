@@ -9,8 +9,8 @@ import java.util.List;
 @Repository
 public interface CriticReviewRepo extends CrudRepository<CriticReview, Integer> {
 
-    public CriticReview findByTitle(String title);
+    CriticReview findByTitle(String title);
 
-    public List<CriticReview> findByCriticName(String criticName);
+    List<CriticReview> findByCriticName(String criticName);
 
 }
