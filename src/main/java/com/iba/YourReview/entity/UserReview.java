@@ -3,7 +3,7 @@ package com.iba.YourReview.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "usersreviews")
+@Table(name = "userreviews")
 public class UserReview {
 
     @Id
