@@ -8,7 +8,7 @@ public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     @Column(name = "title")
     private String title;
     @Column(name = "releaseDate")
@@ -30,11 +30,11 @@ public class Movie {
         this.rating = rating;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
