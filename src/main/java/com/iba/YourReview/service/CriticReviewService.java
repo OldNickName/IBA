@@ -13,8 +13,8 @@ public abstract class CriticReviewService implements CriticReviewRepo {
     @Autowired
     private CriticReviewRepo criticReviewRepo;
 
-    public CriticReview findByTitle(String title){
-        return criticReviewRepo.findByTitle(title);
+    public CriticReview findByTitle(String Title){
+        return criticReviewRepo.findByTitle(Title);
     }
 
     public List<CriticReview> findByCriticName(String criticName){

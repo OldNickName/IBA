@@ -24,7 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home").permitAll()
+                .antMatchers("/showAll").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -47,7 +47,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         return new InMemoryUserDetailsManager(userDetails);
     }
-    /*@Override
+    /*
+    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
@@ -55,4 +56,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .usersByUsernameQuery("select nickName, password from users where nickName=?")
                 .authoritiesByUsernameQuery("select u.nickName, ur.roles from users u inner join user_role ur on u.id = ur.id where u.nickName =?");
     }
-}*/
+}
+*/

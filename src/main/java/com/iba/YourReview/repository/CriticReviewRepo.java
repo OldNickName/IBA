@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CriticReviewRepo extends CrudRepository<CriticReview, Integer> {
+public interface CriticReviewRepo extends CrudRepository<CriticReview, Long> {
 
     CriticReview findByTitle(String title);
 

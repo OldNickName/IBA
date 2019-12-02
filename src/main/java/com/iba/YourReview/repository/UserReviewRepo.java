@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserReviewRepo extends CrudRepository<UserReview, Integer> {
+public interface UserReviewRepo extends CrudRepository<UserReview, Long> {
 
     List<UserReview> findByNickName(String nickName);
 }

@@ -8,7 +8,7 @@ import java.util.Set;
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     @Column(name = "nickName")
     private String nickName;
@@ -19,9 +19,6 @@ public class AppUser {
     @Column(name = "email")
     private String email;
 
-    @ManyToMany
-    private Set<Role> roles;
-
     public AppUser() {}
 
     public AppUser(String nickName, String password, String email) {
@@ -30,19 +27,11 @@ public class AppUser {
         this.email = email;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
