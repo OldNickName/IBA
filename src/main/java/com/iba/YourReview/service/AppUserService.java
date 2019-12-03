@@ -12,8 +12,8 @@ public abstract class AppUserService implements AppUserRepo {
     private AppUserRepo appUserRepo;
 
     @Override
-    public AppUser findByNickName(String Nickname){
-        return appUserRepo.findByNickName(Nickname);
+    public AppUser findByNick(String Nickname){
+        return appUserRepo.findByNick(Nickname);
     }
 
 }

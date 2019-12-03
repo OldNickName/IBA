@@ -10,21 +10,18 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "nickName")
-    private String nickName;
+    @Column(name = "nick")
+    private String nick;
 
     @Column(name = "password")
     private String password;
 
-    @Column(name = "email")
-    private String email;
-
     public AppUser() {}
 
-    public AppUser(String nickName, String password, String email) {
-        this.nickName = nickName;
+
+    public AppUser(String nick, String password) {
+        this.nick = nick;
         this.password = password;
-        this.email = email;
     }
 
     public Long getId() {
@@ -35,12 +32,12 @@ public class AppUser {
         this.id = id;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getNick() {
+        return nick;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNick(String nick) {
+        this.nick = nick;
     }
 
     public String getPassword() {
@@ -49,13 +46,5 @@ public class AppUser {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }
