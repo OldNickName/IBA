@@ -1,17 +1,14 @@
 package com.iba.YourReview.controller;
 
-import com.iba.YourReview.entity.CriticReview;
 import com.iba.YourReview.entity.UserReview;
-import com.iba.YourReview.repository.CriticReviewRepo;
 import com.iba.YourReview.repository.UserReviewRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/api")
+@RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserReviewController {
 
     @Autowired
@@ -22,10 +19,15 @@ public class UserReviewController {
         return (List<UserReview>) userReviewRepo.findAll();
     }
 
-    @PostMapping("/userReview/create")
-    public UserReview createCriticReview(@RequestBody UserReview review){
-        userReviewRepo.save(review);
-        return review;
+    @GetMapping("/usersReview/{title}")
+    public List<UserReview> suersReviewByTitle(@PathVariable String title){
+        return (List<UserReview>) userReviewRepo.findByTitle(title);
+    }
+
+    @PostMapping("/usersReview/add")
+    public void add(@RequestBody UserReview userReview) {
+        userReviewRepo.save(userReview);
+        System.out.println("added");
     }
 
     @PutMapping("userReview/{id}/update")

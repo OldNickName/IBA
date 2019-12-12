@@ -17,4 +17,10 @@ public abstract class UserReviewService implements UserReviewRepo {
     public List<UserReview> findByNickName(String nickName){
         return userReviewRepo.findByNickName(nickName);
     }
+
+    @Override
+    public List<UserReview> findByTitle(String title) {
+        return userReviewRepo.findByTitle(title);
+    }
+
 }

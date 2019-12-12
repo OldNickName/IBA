@@ -1,7 +1,5 @@
 package com.iba.YourReview.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,7 +8,6 @@ import java.util.Set;
 @Table(name = "films")
 public class Movie {
 
-    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Id
@@ -24,6 +21,20 @@ public class Movie {
     private String duration;
     @Column(name = "rating")
     private Double rating;
+    @Column(name = "shortInfo")
+    private String shortInfo;
+
+    @Column(name = "PRODUCER")
+    private String producer;
+
+    @Column(name = "COUNTRY")
+    private String country;
+
+    @Column(name = "ACTORS_LIST")
+    private String actorsList;
+
+    @Column(name ="DESCRIPTION")
+    private String description;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "movie")
             private Set<CriticReview> criticReviews = new HashSet<CriticReview>();
@@ -33,14 +44,59 @@ public class Movie {
 
     Movie() {}
 
-    public Movie(String title, String releaseDate, String genre, String duration, Double rating, Set<CriticReview> criticReviews, Set<UserReview> userReviews) {
+    public Movie(String title, String releaseDate, String genre, String duration, Double rating, String shortInfo, String producer, String country, String actorsList, String description, Set<CriticReview> criticReviews, Set<UserReview> userReviews) {
         this.title = title;
         this.releaseDate = releaseDate;
         this.genre = genre;
         this.duration = duration;
         this.rating = rating;
+        this.shortInfo = shortInfo;
+        this.producer = producer;
+        this.country = country;
+        this.actorsList = actorsList;
+        this.description = description;
         this.criticReviews = criticReviews;
         this.userReviews = userReviews;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getActorsList() {
+        return actorsList;
+    }
+
+    public void setActorsList(String actorsList) {
+        this.actorsList = actorsList;
+    }
+
+    public String getShortInfo() {
+        return shortInfo;
+    }
+
+    public void setShortInfo(String shortInfo) {
+        this.shortInfo = shortInfo;
     }
 
     public Set<UserReview> getUserReviews() {

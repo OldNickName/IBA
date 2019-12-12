@@ -10,4 +10,6 @@ import java.util.List;
 public interface UserReviewRepo extends CrudRepository<UserReview, Long> {
 
     List<UserReview> findByNickName(String nickName);
+
+    List<UserReview> findByTitle(String title);
 }

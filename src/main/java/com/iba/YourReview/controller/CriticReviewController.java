@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/api")
+@RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class CriticReviewController {
 
     @Autowired
@@ -18,6 +18,11 @@ public class CriticReviewController {
     @GetMapping("/critic")
     public List<CriticReview> findAll(){
         return (List<CriticReview>) criticReviewRepo.findAll();
+    }
+
+    @GetMapping("/criticReviews/{title}")
+    public List<CriticReview> findByTitle(@PathVariable String title){
+        return (List<CriticReview>) criticReviewRepo.findByTitle(title);
     }
 
     @PutMapping("critic/{id}/update")

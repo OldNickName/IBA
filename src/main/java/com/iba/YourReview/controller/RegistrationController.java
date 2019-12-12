@@ -1,4 +1,4 @@
-
+/*
 package com.iba.YourReview.controller;
 
 import com.iba.YourReview.entity.AppUser;
@@ -39,9 +39,7 @@ public class RegistrationController {
     @PostMapping("/registration")
     public String addUser(AppUser appUser){
         AppUser user = appUserRepo.findByNick(appUser.getNick());
-        System.out.println(user);
         if(user != null) {
-            System.out.println("wertyushbdhfbjs");
             return "registration";
         }
 
@@ -49,3 +47,5 @@ public class RegistrationController {
         return "redirect:/login";
     }
 }
+
+*/

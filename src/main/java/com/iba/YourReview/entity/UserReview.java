@@ -9,12 +9,10 @@ import javax.persistence.*;
 @Table(name = "userreviews")
 public class UserReview {
 
-    @JsonIgnore
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @JsonIgnore
     @Column(name = "title")
     private String title;
 
