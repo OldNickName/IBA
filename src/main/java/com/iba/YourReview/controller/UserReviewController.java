@@ -24,7 +24,7 @@ public class UserReviewController {
         return (List<UserReview>) userReviewRepo.findByTitle(title);
     }
 
-    @PostMapping("/usersReview/add")
+    @PostMapping("/addUserReview")
     public void add(@RequestBody UserReview userReview) {
         userReviewRepo.save(userReview);
         System.out.println("added");
