@@ -1,7 +1,6 @@
 package com.iba.YourReview.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
@@ -27,7 +26,7 @@ public class UserReview {
             @JsonBackReference
             private Movie movie;
 
-    UserReview() {}
+    public UserReview() {}
 
     public UserReview(String title, String nickName, String review, Movie movie) {
         this.title = title;

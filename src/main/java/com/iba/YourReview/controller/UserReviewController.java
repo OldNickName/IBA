@@ -30,6 +30,16 @@ public class UserReviewController {
         System.out.println("added");
     }
 
+    @PostMapping("/addReviewByTitle/{title}")
+        public void addByTitle(@RequestBody UserReview userReview, @PathVariable String title){
+            UserReview addReview = new UserReview();
+            addReview.setTitle(title);
+            addReview.setNickName(userReview.getNickName());
+            addReview.setReview(userReview.getReview());
+            userReviewRepo.save(addReview);
+        }
+
+
     @PutMapping("userReview/{id}/update")
     public UserReview updateUserReview(@PathVariable("id") UserReview userReview,
                                      @RequestBody UserReview updateUserReview){

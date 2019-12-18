@@ -27,12 +27,10 @@ public class UserController {
     @PostMapping("/registration")
     public void add(@RequestBody AppUser appUser) {
         AppUser user = appUserRepo.findByUsername(appUser.getUsername());
-        System.out.println(user + "user");
         if (user != null) {
             System.out.println("тебя не было и ты есть теперь");
+        } else{
+            appUserRepo.save(appUser);
         }
-
-        appUserRepo.save(appUser);
-        System.out.println( "ты был" );
     }
 }
